@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    padding-left: 96px;
+    padding-right: 96px;
+    background-color: rgba(255, 191, 96, 0.6);
+}
+.titulo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: larger;
+    justify-content: center;
+    margin: 1.5%;
+}
+.gatiro {
+    color: orange;
+}
+.style {
+    color: red;
+}
+.galeria{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "f1 f1 f1 f1 f1 f1 f2 f2 f2 f3 f3 f3"
+        "f1 f1 f1 f1 f1 f1 f4 f4 f4 f5 f5 f5"
+        "f6 f6 f6 f7 f7 f7 f7 f8 f8 f8 f8 f8";
+        gap: 12px;
+        border-radius: 50px;
+}
+.foto{
+    position: relative;
+    background-color: tomato;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 50px;
+}
+.foto__info{
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    background-color: #0009;
+    color: white;
+    font-size: larger;
+    text-align: center;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: 1s;
+}
+.foto:nth-child(1){
+    grid-area: f1;
+    background-image: url(./img/1.png);
+    border-top-left-radius: 50px;
+}
+.foto:nth-child(2){
+    grid-area: f2;
+    background-image: url(./img/2.jfif);
+}
+.foto:nth-child(3){
+    grid-area: f3;
+    background-image: url(./img/3.png);
+    border-top-right-radius: 50px;
+}
+.foto:nth-child(4){
+    grid-area: f4;
+    background-image: url(./img/4.jfif);
+}
+.foto:nth-child(5){
+    grid-area: f5;
+    background-image: url(./img/5.jfif);
+}
+.foto:nth-child(6){
+    grid-area: f6;
+    background-image: url(img/6.jpg);
+    border-bottom-left-radius: 50px;
+}
+.foto:nth-child(7){
+    grid-area: f7;
+    background-image: url(./img/ball.jfif);
+    background-position: 0px 30%;
+}
+.foto:nth-child(8){
+    grid-area: f8;
+    background-image: url(./img/8.jpg);
+    background-position: 0px 20%;
+    border-bottom-right-radius: 50px;
+}
+
+.foto:hover > .foto__info{
+    transform: translateY(0%);
+
+}
+.vermais{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.vermais > h2 {
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 100px;   
+    font-size: 30px;
+    height: 6vh;
+    width: 20%;
+    cursor: pointer;
+    padding: 5px;
+
+}
+@media (max-width: 768px){
+    body{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .galeria{
+        display: flex;
+        flex-direction: column;
+    }
+    .foto{
+        width: 100%;
+        height: 33vh;
+    }
+}
+
+
+
+
